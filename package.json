@@ -4,8 +4,8 @@
   "description": "a light-weight core banking application that powers banking operations like account creation, customer deposit and withdrawals.",
   "main": "app.js",
   "scripts": {
-    "start": "node app.js",
-    "test": "npm run test"
+    "start": "nodemon app.js",
+    "test": "./node_modules/.bin/mocha"
   },
   "repository": {
     "type": "git",
@@ -25,6 +25,12 @@
   },
   "homepage": "https://github.com/BukkyOmo/Banka-lite#readme",
   "dependencies": {
-    "express": "^4.16.4"
+    "chai-http": "^4.2.1",
+    "express": "^4.16.4",
+    "nodemon": "^1.18.11"
+  },
+  "devDependencies": {
+    "chai": "^4.2.0",
+    "mocha": "^6.1.4"
   }
 }
