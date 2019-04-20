@@ -1,0 +1,30 @@
+{
+  "name": "banka-lite",
+  "version": "1.0.0",
+  "description": "a light-weight core banking application that powers banking operations like account creation, customer deposit and withdrawals.",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app.js",
+    "test": "npm run test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/BukkyOmo/Banka-lite.git"
+  },
+  "keywords": [
+    "bank",
+    "node",
+    "express",
+    "SQL",
+    "react"
+  ],
+  "author": "Bukola Omosefunmi",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/BukkyOmo/Banka-lite/issues"
+  },
+  "homepage": "https://github.com/BukkyOmo/Banka-lite#readme",
+  "dependencies": {
+    "express": "^4.16.4"
+  }
+}
