@@ -1,17 +1,17 @@
-var chai = require('chai')
-var chaiHttp = require('chai-http');
+let chai = require('chai');
+let chaiHttp = require('chai-http');
 
 chai.use(chaiHttp);
-const expect = chai.expect; 
+const {expect} = chai;
 const app = require('../app');
 
 describe('TEST HOME PAGE ROUTE', () => {
-    it('it should return a string', (done) => {
-      chai.request('http://localhost:3000')
-        .get('/')
-        .end((err, res) => {
-          expect(res.body.username).to.be.equal('Banka');
-          done();
-        });
-    });
+  it('it should return a string', (done) => {
+    chai.request(app)
+      .get('/')
+      .end((err, res) => {
+        expect(res.body.Appname).to.be.equal('Banka-lite');
+        done();
+      });
   });
+});
