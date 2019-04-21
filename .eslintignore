@@ -4,5 +4,5 @@ build/**
 /jsdoc/**
 /templates/**
 /tmp/**
-/lib/util/unicode/is-combining-character.js
-!.eslintrc.js
+/test
+/config

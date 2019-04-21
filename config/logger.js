@@ -1,5 +1,5 @@
-const appRoot = require('app-root-path');
-const winston = require('winston');
+import appRoot from 'app-root-path';
+import winston from 'winston';
 
 const options = {
   file: {
@@ -19,18 +19,19 @@ const options = {
   },
 };
 
+// eslint-disable-next-line new-cap
 const logger = new winston.createLogger({
   transports: [
     new winston.transports.File(options.file),
-    new winston.transports.Console(options.console)
+    new winston.transports.Console(options.console),
   ],
-  exitOnError: false, 
+  exitOnError: false,
 });
 
 logger.stream = {
-  write: function(message, encoding) {
+  write(message, encoding) {
     logger.info(message);
   },
 };
 
-module.exports = logger;
+export default logger;
