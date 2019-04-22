@@ -1,12 +1,12 @@
 import chai from 'chai';
 import chaiHttp from 'chai-http';
+import { expect } from 'chai';
+import app from '../app';
 
 chai.use(chaiHttp);
-const {expect} = chai;
-const app = require('../app');
 
 describe('TEST HOME PAGE ROUTE', () => {
-  it('it should return a string', (done) => {
+  it('it should return Banka-lite', (done) => {
     chai.request(app)
       .get('/')
       .end((err, res) => {
