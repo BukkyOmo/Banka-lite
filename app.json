@@ -1,0 +1,33 @@
+{
+    "addons": [
+  
+    ],
+    "buildpacks": [
+      {
+        "url": "heroku/nodejs"
+      }
+    ],
+    "env": {
+      "NPM_CONFIG_PRODUCTION": {
+        "required": true
+      }
+    },
+    "formation": {
+      "web": {
+        "quantity": 1
+      }
+    },
+    "name": "banka-lite",
+    "keywords": [
+        "node",
+        "express",
+        "SQL",
+        "React"
+      ],
+      "repository": "https://github.com/BukkyOmo/Banka-lite.git",
+    "scripts": {
+      "heroku-postbuild": "npm run build && npm run heroku:migrate" 
+    },
+    "stack": "heroku-18"
+  }
+  
