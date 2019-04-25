@@ -1,0 +1,6 @@
+{
+    "name": "Banka-Lite",
+    "description": "Banka-lite is a light-weight core banking application that powers banking operations like account creation, customer deposit and withdrawals.",
+    "repository": "https://github.com/BukkyOmo/Banka-lite.git",
+    "keywords": ["node", "express", "SQL", "React", "Banka-Lite"]
+  }
