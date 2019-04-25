@@ -62,3 +62,6 @@ typings/
 
 #es5 build folder
 build/
+
+#ds_store
+.DS_Store
