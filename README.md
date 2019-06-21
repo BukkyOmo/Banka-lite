@@ -5,4 +5,4 @@
 [![CircleCI](https://circleci.com/gh/BukkyOmo/Banka-lite.svg?style=svg)](https://circleci.com/gh/BukkyOmo/Banka-lite)
 
 # Banka-lite
-Banka-lite is a light-weight core banking application that powers banking operations like account creation, customer deposit and withdrawals.
+Banka-lite is a light-weight core banking application that powers banking operations like account creation, customer deposit and withdrawals... It is built on node, express, postgres and react.
