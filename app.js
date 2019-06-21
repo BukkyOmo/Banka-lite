@@ -23,4 +23,4 @@ app.get('/', (req, res) => {
 
 app.listen(port, () => logger.debug(`Application running on port ${port}`));
 
-export default app; 
+export default app;
