@@ -1,26 +1,40 @@
-import express from 'express';
-import bodyParser from 'body-parser';
-import morgan from 'morgan';
-import swaggerUi from 'swagger-ui-express';
-import YAML from 'yamljs';
-import logger from './config/logger';
+import express from "express";
+import bodyParser from "body-parser";
+import cors from "cors";
+import morgan from "morgan";
+import swaggerUi from "swagger-ui-express";
+import YAML from "yamljs";
+import logger from "./config/logger";
+import db from "./db";
+import User from "./model/user";
 
 const app = express();
+app.use(cors());
 const port = process.env.PORT || 8000;
-const swaggerDocument = YAML.load('./swagger.yaml');
+const swaggerDocument = YAML.load("./swagger.yaml");
 
-app.use(morgan('tiny', { stream: logger.stream }));
+app.use(morgan("tiny", { stream: logger.stream }));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
-app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerDocument));
+app.use("/api-docs", swaggerUi.serve, swaggerUi.setup(swaggerDocument));
 
-
-app.get('/', (req, res) => {
-    res.status(200).json({
-        Appname: 'Banka-lite',
+app.get("/users", (request, response) => {
+    User.find((err, users) => {
+        response.send(users)
     })
 });
 
-app.listen(port, () => logger.debug(`Application running on port ${port}`));
+app.get("/", (request, response) => {
+    response.status(200).json({
+        Appname: "Banka-lite"
+    });
+});
+
+db.on("connected", () => {
+    logger.debug(`Connected to database ${db.host}:${db.port} (${db.name}) successfully `);
+    app.listen(port, () => logger.debug(`Application running on port ${port}`));
+});
+
+db.on("error", logger.debug.bind(console, "MongoDB connection error:"));
 
 export default app;
