@@ -8,11 +8,13 @@ jobs:
     docker:
       # specify the version you desire here
       - image: circleci/node:11.11.0
+      - image: circleci/mongo:4.0.3
+    environment:
+      - MONGO_URL: "mongodb://localhost:127.0.0.27017/Banka-lite"
 
       # Specify service dependencies here if necessary
       # CircleCI maintains a library of pre-built images
       # documented at https://circleci.com/docs/2.0/circleci-images/
-      # - image: circleci/mongo:3.4.4
 
     working_directory: ~/Banka-lite
 

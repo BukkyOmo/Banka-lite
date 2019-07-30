@@ -1,4 +1,5 @@
 language: node_js
+services: mongodb
 node_js:
   - "11.11.0"
 install:
@@ -6,6 +7,7 @@ install:
 env:
   global:
     - CC_TEST_REPORTER_ID=d7fc75877b9f45cc71f60e3e60f7a6720e7bca91f6b34744b8f2f26c40e54ecb
+    - MONGODB_VERSION=4.0.3
 before_script:
   - curl -L https://codeclimate.com/downloads/test-reporter/test-reporter-latest-linux-amd64 > ./cc-test-reporter
   - chmod +x ./cc-test-reporter
