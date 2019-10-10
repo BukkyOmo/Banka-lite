@@ -1,7 +1,9 @@
 import mongoose from "mongoose";
+import dotenv from "dotenv";
 
-const dbRoute = 'mongodb://localhost:27017/Banka-lite';
+dotenv.config();
 
+const dbRoute = process.env.DATABASE_URL;
 mongoose.connect(dbRoute, { useNewUrlParser: true });
 
 export default mongoose.connection;
