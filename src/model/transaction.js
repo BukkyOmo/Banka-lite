@@ -11,7 +11,10 @@ var transactionSchema = new Schema({
         type: Number,
         required: true
     },
-    createdAt: Date,
+    createdAt: {
+        type: Date,
+        default: Date.now
+    },
     modifiedAt: Date,
     account: {
         type: Schema.Types.ObjectId,

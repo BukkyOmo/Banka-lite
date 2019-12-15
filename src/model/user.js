@@ -4,24 +4,36 @@ const { Schema, model } = mongoose;
 var userSchema = new Schema({
     firstname: {
         type: String,
-        required: true
+        required: true,
+        trim: true
     },
     lastname: {
         type: String,
-        required: true
+        required: true,
+        trim: true
     },
     email: {
         type: String,
-        required: true
+        required: true,
+        trim: true
     },
     password: {
         type: String,
-        required: true
+        required: true,
+        trim: true
+    },
+    role: {
+        type: String,
+        enum: ['customer, cashier, staff, super-admin'],
+        default: 'customer'
     },
     phoneNumber: Number,
+    address: String,
     imageURL: String,
-    isAdmin: Boolean,
-    createdAt: Date,
+    createdAt: {
+        type: Date,
+        default: Date.now
+    },
     modifiedAt: Date
 });
 
