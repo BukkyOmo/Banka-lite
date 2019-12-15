@@ -7,10 +7,12 @@ import swaggerUi from "swagger-ui-express";
 import YAML from "yamljs";
 import logger from "./config/logger";
 import db from "./config/db";
+import dotenv from "dotenv";
 
+dotenv.config();
 const app = express();
 app.use(cors());
-const port = 8000 || process.env.PORT;
+const port = process.env.PORT || 8000;
 const swaggerDocument = YAML.load("./swagger.yaml");
 
 app.use(morgan("dev", { stream: logger.stream }));

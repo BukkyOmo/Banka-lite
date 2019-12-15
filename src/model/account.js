@@ -9,9 +9,12 @@ var accountSchema = new Schema({
     },
     activated: {
         type: Boolean,
-        required: true
+        default: true
     },
-    createdAt: Date,
+    createdAt: {
+        type: Date,
+        default: Date.now
+    },
     modifiedAt: Date,
     user: {
         type: Schema.Types.ObjectId,
